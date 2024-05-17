@@ -84,6 +84,12 @@ export const createCheckoutSession = async ({
       orderId: order.id,
     },
     line_items: [{ price: product.default_price as string, quantity: 1 }],
+    custom_text: {
+      submit: {
+        message:
+          "**Please use 4242424242424242 as the test card and any 3-digit number for CVC**",
+      },
+    },
   });
 
   return { url: stripeSession.url };
